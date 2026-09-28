@@ -15,7 +15,7 @@ there is one, only translates — it is never the source of a fact.
 |---|---|---|
 | ![Card for "ephemeral": pronunciation, frequency, senses, a Turkish translation, example sentences, related words](docs/images/card-word-light.png) | ![Card for "webpack": the page's own definition, a summary, facts from the package registry, where to look it up](docs/images/card-technical-light.png) | ![Card for "Alan Turing": a Wikipedia summary with birth and death dates and field](docs/images/card-entity-light.png) |
 
-Website: <https://mmdemirbas.github.io/quick-lookup-chrome-ext/>
+Website: <https://mmdemirbas.github.io/quick-lookup-extension/>
 
 Design and reasoning: `SPEC.md`.
 Landscape research and the decisions behind it: `docs/redesign-2026-08-11.md`.

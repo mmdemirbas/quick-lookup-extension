@@ -12,7 +12,7 @@
  */
 import type { HttpClient } from '../core/types.ts';
 
-const CONTACT = 'https://github.com/mmdemirbas/quick-lookup-chrome-ext';
+const CONTACT = 'https://github.com/mmdemirbas/quick-lookup-extension';
 
 export function userAgent(version: string): string {
   return `QuickLookup/${version} (${CONTACT})`;

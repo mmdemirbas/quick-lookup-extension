@@ -23,7 +23,7 @@ import { readFileSync } from 'node:fs';
 const { version } = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 );
-const UA = `QuickLookup/${version} (https://github.com/mmdemirbas/quick-lookup-chrome-ext)`;
+const UA = `QuickLookup/${version} (https://github.com/mmdemirbas/quick-lookup-extension)`;
 
 const http: HttpClient = {
   async json<T>(url: string, init: { signal?: AbortSignal } = {}): Promise<T> {

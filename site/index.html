@@ -7,8 +7,8 @@
 <meta name="description" content="A browser extension that answers a selection where you are reading: definitions and pronunciation for a word, an entity card for a name, the sense that fits the page for a technical term. Ranked locally, no account, no model.">
 <meta property="og:title" content="Quick Lookup — select text on any page and get the answer in place">
 <meta property="og:description" content="A browser extension that answers a selection where you are reading: definitions and pronunciation for a word, an entity card for a name, the sense that fits the page for a technical term. Ranked locally, no account, no model.">
-<meta property="og:image" content="https://mmdemirbas.github.io/quick-lookup-chrome-ext/assets/card-on-page.png">
-<link rel="canonical" href="https://mmdemirbas.github.io/quick-lookup-chrome-ext/">
+<meta property="og:image" content="https://mmdemirbas.github.io/quick-lookup-extension/assets/card-on-page.png">
+<link rel="canonical" href="https://mmdemirbas.github.io/quick-lookup-extension/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>Quick Lookup</a>
-  <nav><a href="#how" class="">How it decides</a><a href="#install" class="">Install</a><a href="#privacy" class="hide-sm">Privacy</a><a class="gh" href="https://github.com/mmdemirbas/quick-lookup-chrome-ext" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></nav>
+  <nav><a href="#how" class="">How it decides</a><a href="#install" class="">Install</a><a href="#privacy" class="hide-sm">Privacy</a><a class="gh" href="https://github.com/mmdemirbas/quick-lookup-extension" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></nav>
 </div></header>
 
 <main>
@@ -30,7 +30,7 @@
   <p class="eyebrow">Browser extension · Chrome, Brave, Edge, Firefox · TypeScript · MIT</p>
   <h1>The answer, where the question was.</h1>
   <p class="lead">Select text on any page and a card opens under it with the most useful answer for that kind of text. An English word gets definitions, pronunciation and related words; a name gets an entity card; a technical term gets the sense that fits the page you are reading. Facts come from data sources, and meanings are ranked against the page locally, with no model.</p>
-  <div class="cta"><a class="btn btn-solid" href="#install">Install</a><a class="btn btn-quiet" href="https://github.com/mmdemirbas/quick-lookup-chrome-ext" rel=noopener><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source on GitHub</a></div>
+  <div class="cta"><a class="btn btn-solid" href="#install">Install</a><a class="btn btn-quiet" href="https://github.com/mmdemirbas/quick-lookup-extension" rel=noopener><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source on GitHub</a></div>
   <div class="stats"><div><b>7</b><span>kinds of selection, each with its own card</span></div><div><b>284</b><span>unit tests over the core, no browser needed</span></div><div><b>0</b><span>accounts, keys or models needed to look something up</span></div></div>
   <div class="visual"><figure class="hero-fig frame window"><div class="bar"><i></i><i></i><i></i></div><img src="assets/card-on-page.png" alt="The card open under the word &quot;manifest&quot; on a page about table formats: pronunciation, how common the word is, the sentence on this page that defines it, then dictionary senses" loading="eager" width="1040" height="650"></figure></div>
 </div></section>
@@ -47,8 +47,8 @@
 </div></section>
 <section id="install"><div class="wrap">
   <div class="section-head"><h2>Install</h2><p>Not in a store yet: build it and load it unpacked. Needs Node.js.</p></div>
-  <div class="install two"><div><h3>Build</h3><pre class="code"><code>git clone https://github.com/mmdemirbas/quick-lookup-chrome-ext.git
-cd quick-lookup-chrome-ext
+  <div class="install two"><div><h3>Build</h3><pre class="code"><code>git clone https://github.com/mmdemirbas/quick-lookup-extension.git
+cd quick-lookup-extension
 npm install
 npm run build                 <span class="c"># dist/chromium</span>
 node build.mjs --firefox      <span class="c"># dist/firefox</span></code></pre><p class=note><code>npm run check</code> runs the type check, the unit tests and the build.</p></div><div><h3>Load</h3><pre class="code"><code>chrome://extensions   (or brave://, edge://)
@@ -68,14 +68,14 @@ about:debugging        (Firefox)
 
 <section id="more"><div class="wrap">
   <div class="section-head"><h2>Go deeper</h2></div>
-  <div class="links"><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-chrome-ext#readme" rel=noopener><b>README</b><span>Triggering, the side panel, dictionary packs, every permission and why it is asked for.</span><small>GitHub</small></a><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-chrome-ext/blob/main/SPEC.md" rel=noopener><b>Design</b><span>What the extension is for, how intent and ranking work, and the decisions behind them.</span><small>SPEC.md</small></a><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-chrome-ext/blob/main/docs/redesign-2026-08-11.md" rel=noopener><b>The redesign</b><span>The landscape research and the reasoning behind the August 2026 rewrite.</span><small>docs/redesign-2026-08-11.md</small></a></div>
+  <div class="links"><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-extension#readme" rel=noopener><b>README</b><span>Triggering, the side panel, dictionary packs, every permission and why it is asked for.</span><small>GitHub</small></a><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-extension/blob/main/SPEC.md" rel=noopener><b>Design</b><span>What the extension is for, how intent and ranking work, and the decisions behind them.</span><small>SPEC.md</small></a><a class="link-card" href="https://github.com/mmdemirbas/quick-lookup-extension/blob/main/docs/redesign-2026-08-11.md" rel=noopener><b>The redesign</b><span>The landscape research and the reasoning behind the August 2026 rewrite.</span><small>docs/redesign-2026-08-11.md</small></a></div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
   <span>Quick Lookup</span>
   <span class="spacer"></span>
-  <a href="https://github.com/mmdemirbas/quick-lookup-chrome-ext" rel="noopener">GitHub</a>
+  <a href="https://github.com/mmdemirbas/quick-lookup-extension" rel="noopener">GitHub</a>
   <a href="https://mdemirbas.com/en/projects/quick-lookup/" rel="noopener">Muhammed Demirbaş</a>
   <a href="https://mdemirbas.com/" rel="noopener">Other projects</a>
 </div></footer>

@@ -27,7 +27,7 @@ import { readFileSync } from 'node:fs';
 const { version } = JSON.parse(
   readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
 );
-const UA = `QuickLookup/${version} (https://github.com/mmdemirbas/quick-lookup-chrome-ext)`;
+const UA = `QuickLookup/${version} (https://github.com/mmdemirbas/quick-lookup-extension)`;
 
 /**
  * The same shape as `platform/http.ts`, rebuilt here rather than imported.
