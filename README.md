@@ -31,7 +31,7 @@ card, the sources, the selection and the settings page).
 
 ```bash
 npm install
-npm run build
+./ctl build
 ```
 
 Then, in Brave, Chrome or Edge:
@@ -40,25 +40,30 @@ Then, in Brave, Chrome or Edge:
 2. Turn on Developer mode.
 3. Choose "Load unpacked" and select `dist/chromium`.
 
-For Firefox, build with `node build.mjs --firefox` and load
+For Firefox, build with `./ctl build --firefox` and load
 `dist/firefox` through `about:debugging`.
 
 ## Commands
 
-| Command | What it does |
-|---|---|
-| `npm run build` | Builds the unpacked extension into `dist/chromium` |
-| `npm run dev` | Same, with watch and source maps |
-| `npm run typecheck` | Type checks without emitting |
-| `npm test` | Unit tests over the pure core, no browser needed |
-| `npm run check` | Typecheck, tests and build — the gate before any commit |
-| `npm run smoke` | Runs the real pipeline against the real sources |
-| `npm run sweep` | Puts 20 known terms through the entity provider against live Wikipedia |
-| `npm run unused` | Lists code nothing reaches — a name defined once and called nowhere |
-| `npm run preview` | Builds a page that renders the card outside the extension |
-| `npm run shots` | Renders the card pictures in `docs/images` from that page |
+`./ctl` lists these. Each runs the npm script beside it, so both spellings
+do the same thing.
 
-`npm run smoke` is separate from `npm run check` on purpose. Unit tests
+| Command | npm script | What it does |
+|---|---|---|
+| `./ctl build` | `build` | Builds the unpacked extension into `dist/chromium` |
+| `./ctl dev` | `dev` | Same, with watch and source maps |
+| `./ctl dev bridge` | | Runs the local bridge on `127.0.0.1:8787` (see below) |
+| `./ctl check types` | `typecheck` | Type checks without emitting |
+| `./ctl test` | `test` | Unit tests over the pure core, no browser needed |
+| `./ctl check` | `check` | Typecheck, tests and build — the gate before any commit — then `./ctl --check` |
+| `./ctl test smoke` | `smoke` | Runs the real pipeline against the real sources |
+| `./ctl test e2e` | `e2e` | Builds, loads the extension into a real browser and selects a word |
+| `./ctl sweep` | `sweep` | Puts 20 known terms through the entity provider against live Wikipedia |
+| `./ctl unused` | `unused` | Lists code nothing reaches — a name defined once and called nowhere |
+| `./ctl build preview` | `preview` | Builds a page that renders the card outside the extension |
+| `./ctl shot` | `shots` | Renders the card pictures in `docs/images` from that page |
+
+`./ctl test smoke` is separate from `./ctl check` on purpose. Unit tests
 use canned payloads, so they keep passing when a source goes down or
 changes shape — which is how the previous version shipped a dictionary
 provider whose API had started returning 502. The smoke test catches
@@ -166,7 +171,7 @@ device and is not synced. Sonnet 5 answers by default, and the picker under the
 composer changes the model for the conversation you are in.
 
 **The local bridge** is the third way, and the one that spends no money. Run
-`node bridge/server.mjs` from this repository; it prints an address and a token
+`./ctl dev bridge` (`node bridge/server.mjs`) from this repository; it prints an address and a token
 to paste into settings, then switch "Answered by" to the local bridge. Answers
 then come from Claude Code on this machine, using the subscription already
 there, and no key is stored in the browser at all.

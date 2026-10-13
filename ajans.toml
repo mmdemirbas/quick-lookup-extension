@@ -1,0 +1,46 @@
+#:schema ../ajans/schema/project-2.schema.json
+contract = 2
+
+[operations.dev]
+summary = "Build the extension again on every save, with source maps"
+lifecycle = "service"
+
+# /health answers only with the bridge token, so the board checks the port.
+[operations."dev bridge"]
+summary = "The local bridge on 127.0.0.1:8787: answers from Claude Code, no API key"
+lifecycle = "service"
+port = 8787
+
+[operations.build]
+summary = "Build the unpacked extension into dist/chromium (--firefox for dist/firefox)"
+target = "browser:extension"
+
+[operations."build preview"]
+summary = "A page that renders the card outside the extension, in dist/preview"
+
+[operations.check]
+summary = "Typecheck, tests and build, then ctl against ajans.toml: the gate before any commit"
+
+[operations."check types"]
+summary = "Type check without emitting"
+
+[operations.test]
+summary = "Unit tests over the pure core, no browser needed"
+
+[operations."test e2e"]
+summary = "The built extension in a real browser, selecting a word with the mouse"
+needs = ["network"]
+
+[operations."test smoke"]
+summary = "The real pipeline against the real sources"
+needs = ["network"]
+
+[operations.sweep]
+summary = "20 known terms through the entity provider against live Wikipedia: a table, not a verdict"
+needs = ["network"]
+
+[operations.unused]
+summary = "List code nothing reaches: a name defined once and called nowhere"
+
+[operations.shot]
+summary = "Render the card pictures in docs/images from the preview page"
