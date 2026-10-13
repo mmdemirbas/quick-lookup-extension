@@ -11,6 +11,10 @@ summary = "The local bridge on 127.0.0.1:8787: answers from Claude Code, no API 
 lifecycle = "service"
 port = 8787
 
+[operations.pair]
+summary = "Put the bridge token on the clipboard, to paste into the extension settings under Chat"
+intent = "setup"
+
 [operations.build]
 summary = "Build the unpacked extension into dist/chromium (--firefox for dist/firefox)"
 target = "browser:extension"

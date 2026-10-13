@@ -276,7 +276,7 @@ async function handleChat(requestId: string, conversation: Conversation): Promis
         requestId,
         message:
           settings.chat.backend === 'bridge'
-            ? 'No bridge token is set. Start the bridge and paste its token into the extension settings.'
+            ? 'No bridge token is set. Start the bridge, run ./ctl pair and paste the token into the extension settings.'
             : 'No API key is set. Add one in the extension settings.',
         retryable: false,
       });

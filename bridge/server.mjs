@@ -413,17 +413,21 @@ function main() {
   // Loopback, named explicitly. Omitting the host argument is a wildcard
   // bind, and this process can spend a subscription and start a subprocess.
   // Expected caller: the Quick Lookup extension in a browser on this machine.
+  //
+  // The banner says where the token is and never the token itself: whatever
+  // runs this server - a terminal's scrollback, the ajans board's run log -
+  // may keep its output, and a token in a log works for whoever reads it.
   server.listen(port, HOST, () => {
     const address = server.address();
     process.stdout.write(
       [
         `Quick Lookup bridge listening on http://${HOST}:${address.port}`,
         '',
-        'Paste this into the extension settings, under Chat:',
+        'In the extension settings, under Chat:',
         `  URL    http://${HOST}:${address.port}`,
-        `  Token  ${token}`,
+        `  Token  the one in ${TOKEN_FILE}; ./ctl pair puts it on the clipboard`,
         '',
-        `The token is stored at ${TOKEN_FILE} and stays the same across restarts.`,
+        'The token stays the same across restarts.',
         'Answers come from Claude Code with tools switched off, in an empty',
         `working directory (${NEUTRAL_DIR}).`,
         '',

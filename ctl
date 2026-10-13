@@ -8,6 +8,24 @@ op_dev() { exec npm run dev -- "$@"; }
 
 op_dev_bridge() { exec node bridge/server.mjs "$@"; }
 
+# The bridge token onto the clipboard, for the extension's settings. Never to
+# the screen: a run from the board keeps its output in a log. The bridge mints
+# the token on its first start, at the path its TOKEN_FILE names.
+op_pair() {
+	local file="$HOME/.quick-lookup/bridge-token" token
+	if [[ ! -s "$file" ]]; then
+		printf '⏸ no bridge token yet: start the bridge once (./ctl dev bridge)\n' >&2
+		exit 75
+	fi
+	if ! command -v pbcopy >/dev/null; then
+		printf '⏸ no pbcopy on this machine; the token is in %s\n' "$file" >&2
+		exit 75
+	fi
+	token="$(tr -d '[:space:]' <"$file")"
+	printf '%s' "$token" | pbcopy
+	printf '✓ the bridge token is on the clipboard: paste it into the extension settings, under Chat\n'
+}
+
 op_build() { npm run build -- "$@"; }
 
 op_build_preview() { npm run preview -- "$@"; }

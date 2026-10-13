@@ -100,7 +100,7 @@ async function renderKeyState(): Promise<void> {
     fields.chatKey.placeholder = present ? 'Type a new key to replace it' : 'sk-ant-\u2026';
     fields.chatBridgeToken.placeholder = state?.bridgePresent
       ? `Stored: ${state.bridgeMasked}. Type a new one to replace it`
-      : 'Paste the token the bridge printed';
+      : 'Paste the bridge token (./ctl pair copies it)';
   } catch {
     label.textContent = 'Could not read the key state.';
   }
@@ -149,7 +149,7 @@ $<HTMLButtonElement>('chatBridgeTest').addEventListener('click', () => {
       }
       switch (health.reason) {
         case 'no-token':
-          state.textContent = 'No token yet. Paste the one the bridge printed, then test.';
+          state.textContent = 'No token yet. Run ./ctl pair, paste the token, then test.';
           return;
         case 'refused':
           state.textContent = 'Reached it, but the token was refused.';

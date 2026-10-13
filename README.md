@@ -53,6 +53,7 @@ do the same thing.
 | `./ctl build` | `build` | Builds the unpacked extension into `dist/chromium` |
 | `./ctl dev` | `dev` | Same, with watch and source maps |
 | `./ctl dev bridge` | | Runs the local bridge on `127.0.0.1:8787` (see below) |
+| `./ctl pair` | | Puts the bridge token on the clipboard, for the extension settings |
 | `./ctl check types` | `typecheck` | Type checks without emitting |
 | `./ctl test` | `test` | Unit tests over the pure core, no browser needed |
 | `./ctl check` | `check` | Typecheck, tests and build — the gate before any commit — then `./ctl --check` |
@@ -171,8 +172,10 @@ device and is not synced. Sonnet 5 answers by default, and the picker under the
 composer changes the model for the conversation you are in.
 
 **The local bridge** is the third way, and the one that spends no money. Run
-`./ctl dev bridge` (`node bridge/server.mjs`) from this repository; it prints an address and a token
-to paste into settings, then switch "Answered by" to the local bridge. Answers
+`./ctl dev bridge` (`node bridge/server.mjs`) from this repository; it prints the address to paste
+into settings, and `./ctl pair` puts its token on the clipboard to paste beside it. The token is
+never printed, because a log of the bridge's output would hand it to whoever reads the log. Then
+switch "Answered by" to the local bridge. Answers
 then come from Claude Code on this machine, using the subscription already
 there, and no key is stored in the browser at all.
 
