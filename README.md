@@ -43,6 +43,12 @@ Then, in Brave, Chrome or Edge:
 For Firefox, build with `./ctl build --firefox` and load
 `dist/firefox` through `about:debugging`.
 
+Once it is loaded, nothing has to keep running: the browser reads the built
+files. `./ctl dev` is for working on the extension, and it writes into the
+same `dist/chromium`, unminified and with its source maps inline, so every page
+gets a content script several times the size. After a session with it, run
+`./ctl build` and reload the extension.
+
 ## Commands
 
 `./ctl` lists these. Each runs the npm script beside it, so both spellings
